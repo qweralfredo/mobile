@@ -1,49 +1,73 @@
-<html lang="en" xmlns:ext="http://www.sencha.com/docs">
+<!DOCTYPE html>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Drag &amp; Drop</title>
+    <link rel="stylesheet" href="resources/css/sencha-touch.css" type="text/css">
+    <script type="text/javascript" src="sencha-touch.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+    
+    <style>
+        body {
+            background-color: #7B7B7B;
+        }
+        
+        #draggable, #invalid {
+            width: 100px;
+            height: 100px;
+            background-color: #5283D1;
+            top: 170px;
+            left: 5px;
+            position: absolute;
+            z-index: 1;
+            -webkit-border-radius: 4px;
+            padding-top: 40px;
+            text-align: center;
+            color: rgba(0,0,0,.5);
+            border-bottom: 1px solid rgba(0,0,0,.3);
+        }
+        
+        #invalid {
+            left: 130px;
+        }
+        
+        #draggable.x-dragging,
+        #invalid.x-dragging {
+            background-color: #2066C2;
+        }
+        
+        #droppable {
+            text-align: center;
+            -webkit-border-radius: 4px;
+            color: rgba(0,0,0,.5);
+            border-top: 1px solid rgba(0,0,0,.3);
+            padding-top: 60px;
+            height: 150px;
+            width: 310px;
+            background-color: #435699;
+            position: absolute;
+            left: 5px;
+            top: 5px;
+        }
+        
+        #droppable.x-drop-active {
+            background-color: #44935E;
+        }
 
-<title>Sencha Touch API Documentation</title>
-
-<meta name="description" content="API Documentation for Sencha Touch - an HTML5 mobile JavaScript framework for Apple iOS (iPhone/iPad), Google Android and other touchscreen devices." />
-<link rel="stylesheet" type="text/css" href="resources/css/ext-all.css" />
-<link rel="stylesheet" type="text/css" href="resources/css/xtheme-gray.css" />
-<link rel="stylesheet" type="text/css" href="resources/docs.css" />
-<link rel="stylesheet" type="text/css" href="resources/style.css" />    
-<link rel="shortcut icon" href="resources/favicon.ico" />
-<link rel="icon" href="resources/favicon.ico" />
-<style type="text/css"></style>
-<!-- GC -->
-<script type="text/javascript" src="resources/ext-base.js"></script>
-<script type="text/javascript" src="resources/ext-all.js"></script>
-<script type="text/javascript" src="resources/TabCloseMenu.js"></script>
-<script type="text/javascript" src="resources/docs.js"></script>
-<script type="text/javascript" src="output/tree.js"></script>
+        #droppable.x-drop-hover {
+            background-color: #295A3A;
+        }
+        
+        #droppable.x-drop-invalid {
+            background-color: #932D2E;
+        }
+    </style>
 </head>
-<body scroll="no" id="docs">
-<div id="loading-mask"></div>
-<div id="loading">
-    <div class="loading-indicator">
-        <img src="resources/extanim32.gif" width="32" height="32" style="margin-right:8px;" align="absmiddle" />
-        Loading&hellip;
-    </div>
-</div>
 
-<div id="header">
-    <img style="margin-left: 5px" src="resources/title.png" alt="Sencha Touch API Documentation" height="49" width="380" />
-    <div style="float:right; margin-top: 15px;margin-right: 10px;color: #CCC">
-        <a href="http://www.sencha.com/products/touch/demos.php" style="padding:5px">examples</a> | 
-        <a href="http://www.sencha.com/" style="padding:5px">sencha.com</a>
-    </div>
-</div>
-
-<div id="classes"></div>
-
-<div id="main"></div>
-
-<select id="search-options" style="display:none">
-    <option>Starts with</option>
-    <option>Ends with</option>
-    <option>Any Match</option>
-</select>
+<body>
+    <div id="droppable">Droppable</div>
+    <div id="draggable">Draggable</div>
+    <div id="invalid">Draggable</div>
 </body>
+
 </html>
